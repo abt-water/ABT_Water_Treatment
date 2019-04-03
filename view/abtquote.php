@@ -1,6 +1,6 @@
 <?php
 //Still need to comment and clean code some more last updated 12/15/2018
-include('../model/open_db.php');
+//include('../model/open_db.php');
 
 ?>
     <!DOCTYPE html>
@@ -9,24 +9,8 @@ include('../model/open_db.php');
     <head>
         <!-- Theme Made By www.w3schools.com - -->
         <title>ABT Quote</title>
-        <meta charset="utf-8">
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-		<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-       
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>-->
-		<link rel="stylesheet" href="../CSS/abtquoteboot.css">
-		<?php include("../CSS/includeFront.php");?>
-        <script src="../JS/abtquote.js"></script>
-        <style>
-
-        </style>
+        <?php include("../CSS/includeFront.php");?>
+        <script src ="../JS/abtquote.js"></script>        
     </head>
 
     <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -359,7 +343,7 @@ include('../model/open_db.php');
             <div class="container">
                 
                 <div id="step2" class="step2">
-
+                <form name="myForm" action="" method="POST" enctype="multipart/form-data">
                     <h1><u>Please Select Meter And Enter Number Of Sites Below</u></h1><br><br>
 
                     <div class="form-group row">
@@ -492,7 +476,7 @@ include('../model/open_db.php');
                 <h1><u>Please Fill Out The Form Below To Submit Your Estimate</u></h1><br><br>
 
 <div id="step1" class="step1">
-    <form name="myForm" action="" method="POST" enctype="multipart/form-data">
+    
         <!--<input type="hidden" name="action" value="submit">-->
 
 
@@ -627,9 +611,9 @@ include('../model/open_db.php');
                     <div class="col-sm-4">
                         <iframe class="wrap-box-element" width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=42.549844,-89.021571&amp;ll=42.549844,-89.021571&amp;z=16&amp;output=embed"></iframe>
                 
-                            <p>ABT Water</br>
-                            2836 S. Bartells Dr</br>
-                            Beloit, WI 53511</br>
+                            <p>ABT Water<br>
+                            2836 S. Bartells Dr<br>
+                            Beloit, WI 53511<br>
                             (608) 313-8791</p>
                     </div>
 
@@ -660,70 +644,15 @@ include('../model/open_db.php');
 
 
                 <?php 
-                if(isset($_POST['submit'])){
-                   
-    $First_Name=$_POST['First_Name']; 
-    $Last_Name=$_POST['Last_Name']; 
-    $Baddress=$_POST['Baddress']; 
-    $Community=$_POST['Community']; 
-    $City=$_POST['City']; 
-    $Zip=$_POST['Zip']; 
-    $Phone=$_POST['Phone']; 
-    $Email=$_POST['Email']; 
-    $Bstate=$_POST['Bstate']; 
-
-    $Meter=$_POST['Meter']; 
-    $Number_of_Sites=$_POST['Number_of_Sites']; 
-    $Receive_Equip_Price=$_POST['Receive_Equip_Price']; 
-    $Repeaters_Needed=$_POST['Repeaters_Needed']; 
-    $Repeaters_Cost=$_POST['Repeaters_Cost']; 
-    $Labor_Price=$_POST['Labor_Price']; 
-    $Parts_Price=$_POST['Parts_Price']; 
-    $Meter_Price=$_POST['Meter_Price']; 
-    $Total_Price=$_POST['Total_Price'];
-    $Estimated_Days=$_POST['Estimated_Days'];
-
-    $Respond=$_POST['Respond'];
-   
-   
-   $sql =<<<EOF
-      INSERT INTO Contacts (First_Name,Last_Name,Baddress,Community,City,Phone,Zip,Email,Bstate,Respond)
-      VALUES ('$First_Name','$Last_Name','$Baddress', '$Community','$City', '$Phone', '$Zip', '$Email', '$Bstate','$Respond' );
-
-      INSERT INTO Meter_Info (Meter,Number_of_Sites,Receive_Equip_Price,Repeaters_Needed,Repeaters_Cost,Labor_Price,Parts_Price,Meter_Price,Total_Price,Estimated_Days)
-      VALUES ('$Meter',  '$Number_of_Sites','$Receive_Equip_Price', '$Repeaters_Needed','$Repeaters_Cost', '$Labor_Price', '$Parts_Price', '$Meter_Price', '$Total_Price', '$Estimated_Days' );
-      
-      
-EOF;
-
-   $ret = $db->exec($sql);
-   if(!$ret){
-    echo $db->lastErrorMsg();
-   } else {
-     echo "Records created successfully\n";
-   }
-   $db->close();
-}
+                include('../controller/frontEndController.php');
+                echo $submitQuote;
+           
 ?>
             </div>
         </div>
 
 
-        <!-- Container (Portfolio Section)
-        <div id="warranty" class="container-fluid text-center"> -->
-            
-
-
-
-            <!-- Container (Pricing Section) 
-        <div id="pricing" class="container-fluid">
-
-        </div>-->
-
-            <!-- Container (Contact Section) 
-        <div id="contact" class="container-fluid bg-grey">
-
-        </div>-->
+        
 
 
             <footer class="container-fluid text-center">

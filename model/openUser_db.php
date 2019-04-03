@@ -13,7 +13,7 @@
    if(!$dbU){
      echo $dbU->lastErrorMsg();
    } else {
-     echo "Opened database successfully\n";
+     //echo "Opened database successfully\n";
    }
 
 
