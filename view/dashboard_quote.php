@@ -9,13 +9,7 @@ include('../Controller/testcontroller.php');
 
 <head>
     <title>Dashboard Quote</title>
-    <!--<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet" type="text/css">-->
-	<?php include("../CSS/includeBack.php");?>
+	<?php include("../CSS/includeBack2.php");?>
     <script language="javascript">
 
 function submitForm(){

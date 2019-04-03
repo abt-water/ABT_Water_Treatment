@@ -3,8 +3,7 @@
 
 <head>
     <title>Dashboard Main</title>
-	<?php include("../CSS/includeBack.php");?>
-
+<?php include("../CSS/includeBack2.php");?>
 
     <style>
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */

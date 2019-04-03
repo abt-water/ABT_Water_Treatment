@@ -3,15 +3,15 @@
   require_once('openUser_db.php');
 
    $sql =<<<EOF
-      CREATE TABLE Contacts
+      CREATE TABLE User
       (
       ID INTEGER PRIMARY KEY AUTOINCREMENT,
       firstName           TEXT,
-      lastName            TEXT,
+      
       employeeID        INT,
-      birthDate        CHAR(50),
+      
       username       CHAR(50),
-      password        CHAR(50),
+      bpassword        CHAR(50),
       confirmPassword        CHAR(50)
       
    );
