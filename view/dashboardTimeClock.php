@@ -1,3 +1,7 @@
+<?php 
+include("../model/TimeClockFunctions.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
