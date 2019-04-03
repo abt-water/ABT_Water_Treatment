@@ -46,7 +46,7 @@
             </div>
             <br>
 			<?php
-				
+				displayTimeClock();
 			?>
 
             <!--Start Code Here-->
