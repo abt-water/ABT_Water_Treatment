@@ -7,7 +7,72 @@ include("../model/TimeClockFunctions.php");
 
 <head>
     <title>Dashboard Main</title>
-	<?php include("../CSS/includeBack.php");?>
+	<?php include("../CSS/includeBack2.php");?>
+
+    <style>
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        
+        .row.content {
+            height: 800px;
+        }
+        /* Set gray background color and 100% height */
+        
+        .sidenav {
+            background-color: #3399ff;
+            color: #fff;
+            height: 1275px;
+        }
+        
+        .sidenav li a {
+            color: #fff;
+        }
+        
+        .sidenav li.active a {
+            border-radius: 25px 35px 25px 35px;
+            color: #fff !important;
+            background-color: rgb(45, 3, 230) !important;
+        }
+        
+        .sidenav li a:hover {
+            border-radius: 25px 35px 25px 35px;
+            background-color: rgb(45, 3, 230);
+        }
+        /* On small screens, set height to 'auto' for the grid */
+        
+        @media screen and (max-width: 767px) {
+            .row.content {
+                height: auto;
+            }
+        }
+        
+        .top {
+            border-radius: 25px 35px 25px 35px;
+            background-color: #3399ff;
+            height: 50px;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .dayReport {
+            height: 300px;
+        }
+        
+        .email {
+            height: 300px;
+        }
+        
+        .quote {
+            height: 300px;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        ul {
+            list-style-type: none;
+        }
+    </style>
 </head>
 
 <body>
