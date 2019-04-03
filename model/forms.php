@@ -8,7 +8,6 @@ class signUpForm
     {
         ?>
 
-
         <!--SignUp Form-->
         <!--<form action = 'signUpPage.php' method="POST">-->
         <form role="form" method="post" action="registration.php?add=<?php echo uniqid()?>">
@@ -78,6 +77,47 @@ class signUpForm
                 <br/>
 
                 <button name="submit" id="submit" for="submit">Login</button>
+                <button type="reset">Clear</button>
+            </div>
+        </div>
+    </form>
+<?php
+
+}
+
+}
+
+?>
+
+<?php
+    class contactUsForm
+    {
+    public function displayContactUs()
+    {
+    ?>
+    <!--Contact Us Form-->
+    <form action = 'contact_us.php' method="POST">
+        <div class="contactUs">
+            <h1>Contact Us</h1>
+            <br>
+            <div class="contactUsBody">
+                <label for="firstName"><b>First Name</b></label>
+                <input type="text" name="firstName" required>
+                <br/>
+
+                <label for="lastName"><b>Last Name</b></label>
+                <input type="text" name="lastName" required>
+                <br/>
+
+                <label for="email"><b>Email</b></label>
+                <input type="email" name="email" required>
+                <br/>
+
+                <label for="comment"><b>Comment</b></label>
+                <input type="text" name="text" required>
+                <br/>
+
+                <button name="submit" id="submit" for="submit">Submit</button>
                 <button type="reset">Clear</button>
             </div>
         </div>

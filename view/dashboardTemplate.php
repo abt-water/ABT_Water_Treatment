@@ -81,14 +81,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-                <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="www.abtwater.com">ABT</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li><a href="dashboard.php">Dashboard</a></li>
                     <li><a href="dashboard_quote.php">Quote List</a></li>
-
-                    <li><a href="followUp.php">Follow Up</a></li>
+                    <li><a href="contactUs.php">Contact Us</a></li>
+                    <li><a href="timeClock.php">Timeclock</a></li>
                 </ul>
             </div>
         </div>
@@ -101,17 +101,17 @@
                 <ul class="nav nav-pills nav-stacked">
                     <li><a href="dashboard.php">Dashboard</a></li>
                     <li><a href="dashboard_quote.php">Quotes List</a></li>
-
-                    <li><a href="followUp.php">Follow Up</a></li>
-
-
-
-
+                    <li><a href="contactUs.php">Contact Us</a></li>
+                    <li><a href="timeClock.php">Timeclock</a></li>
                 </ul><br>
             </div>
             <br>
 
             <!--Start Code Here-->
+            <?php
+                include('../controller/contactUsController.php');
+                echo $contactUs;
+            ?>
 
             
                 </body>
