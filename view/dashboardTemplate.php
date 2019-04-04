@@ -108,10 +108,7 @@
             <br>
 
             <!--Start Code Here-->
-            <?php
-                include('../controller/contactUsController.php');
-                echo $contactUs;
-            ?>
+            
 
             
                 </body>
