@@ -391,36 +391,26 @@ $infoForm ->displayInfoSection();
 
 
 
-                <?php 
-                include('../controller/frontEndController.php');
-                echo $submitQuote;
-           
-                ?>
+        <?php 
+        //function that submits quote to database
+            include('../controller/frontEndController.php');
+            echo $submitQuote;
+        ?>
+
             </div>
         </div>
 
+        <?php 
+        //footer code
+             include('../model/frontFooter.php');
+        ?> 
 
-        
+    <script >         
+        <?php
+        //javascript that had to be listed seperate from main script
+            include("../JS/abtquote2.js");
+        ?>
+    </script>
 
-
-            <footer class="container-fluid text-center">
-                <a href="#myPage" title="To Top">
-                    <span class="glyphicon glyphicon-chevron-up"></span>
-                </a>
-
-                <a href="#myPage">
-                    <p>Top Of Page</p>
-                </a>
-
-            </footer>
-
-            <script >
-                
-                <?php
-        include("../JS/abtquote2.js");
-                ?>
-            </script>
-
-    </body>
-
-    </html>
+</body>
+ </html>
