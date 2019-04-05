@@ -335,9 +335,8 @@ include('../model/forms.php');
             </div>
             
             </div><br><br><br>
+            
             <?php
-
-
 
 /*Creates a new meter estimate form*/
 $estimateForm = new estimate();
@@ -351,9 +350,9 @@ $infoForm ->displayInfoSection();
      ?>           
            
                 <!-- Contact Us: address, phone, email, google map, spot for user to leave comments, name, and email
-        google ABT Water in Beloit for info on this section -->
+        google ABT Water in Beloit for info on this section need to get this section into form page -->
         <div id="contact" class="container-fluid bg-grey">
-            <form>
+        <form name="myForm" action="" method="POST" enctype="multipart/form-data">
                 <h2>Contact Us</h2>
                 <div class="row">
                     <div class="col-sm-4">
