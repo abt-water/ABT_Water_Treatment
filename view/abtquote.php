@@ -635,7 +635,7 @@
                             <label for="lname">Comments</label>
                             <textarea class="form-control" rows="5"></textarea>
                         </div>
-                        <input class="buttonSu" id="submit" name="submit" type="submit" value="Submit">
+                        <input class="buttonSu" id="contactSubmit" name="contactSubmit" type="submit" value="Submit">
                     </div>
                 </div>
             </form>

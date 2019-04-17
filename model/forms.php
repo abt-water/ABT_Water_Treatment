@@ -111,26 +111,26 @@ class signUpForm
     <!--Contact Us Form-->
     <form action = 'contact_us.php' method="POST">
         <div class="contactUs">
-            <h1>Contact Us</h1>
+            <h1><u><i>Contact Us</i></u></h1>
             <br>
             <div class="contactUsBody">
-                <label for="firstName"><b>First Name</b></label>
+                <label for="firstName"><b>First Name:</b></label><br>
                 <input type="text" name="firstName" required>
                 <br/>
 
-                <label for="lastName"><b>Last Name</b></label>
+                <label for="lastName"><b>Last Name:</b></label><br>
                 <input type="text" name="lastName" required>
                 <br/>
 
-                <label for="email"><b>Email</b></label>
+                <label for="email"><b>Email:</b></label><br>
                 <input type="email" name="email" required>
                 <br/>
 
-                <label for="comment"><b>Comment</b></label>
-                <input type="text" name="text" required>
+                <label for="comment"><b>Comment:</b></label><br>
+                <input type="textarea" name="text" required>
                 <br/>
 
-                <button name="submit" id="submit" for="submit">Submit</button>
+                <button name="contactSubmit" id="contactSubmit" for="contactSubmit">Submit</button>
                 <button type="reset">Clear</button>
             </div>
         </div>
