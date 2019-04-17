@@ -34,6 +34,11 @@ class timeClockForm{
 		
 		<?php		
 	}
+	public function clocktime(){
+		
+	}
+	
+	
 	
 }
 
