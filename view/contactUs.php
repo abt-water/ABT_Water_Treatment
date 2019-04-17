@@ -70,6 +70,15 @@
         ul {
             list-style-type: none;
         }
+        
+        h1, .center {
+            text-align: center;
+        }
+
+        .contactUsBody {
+            text-align: center;
+        }
+
     </style>
 </head>
 
@@ -110,15 +119,15 @@
             <br>
 
             <!--Start Code Here-->
-            <?php
-                include('../controller/contactUsController.php');
-                echo $contactUs;
-            ?>
-
-            
-                </body>
-
-</html>
-
-</body>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-4">
+                    <?php
+                        include('../controller/contactUsController.php');
+                        echo $contactUs;
+                    ?>
+            </div>
+            <div class="col-sm-2"></div>
+                
+        </div>
+    </body>
 </html>
