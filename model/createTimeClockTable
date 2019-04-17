@@ -8,7 +8,11 @@ CREATE TABLE TimeClock (
     Time       DATETIME    NOT NULL,
     CostCode   VARCHAR (5),
     ClockIn    BOOLEAN     NOT NULL,
-    Job        TEXT
+    Job        TEXT,
+    
+    Constraint fk_employee
+        Foreign Key (EmployeeID)
+        References User (ID)
 );
 
 PRAGMA foreign_keys = 1;
