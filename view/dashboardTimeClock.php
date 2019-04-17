@@ -50,7 +50,7 @@ include("../model/TimeClockFunctions.php");
             </div>
             <br>
 			<?php
-			session_start();
+				session_start();
 				$form = new timeClockForm();
 				$form ->displayTimeClock();
 			?>
