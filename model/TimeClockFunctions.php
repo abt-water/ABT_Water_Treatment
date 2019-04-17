@@ -5,7 +5,6 @@ class timeClockForm{
 		<form action = 'ClockEmployee.php' method="POST" ID = "clockForm">
             <div class="Clock container">
                 <h2>Clock In / Out</h2>
-                <br>
                 <label for="employeeID" class = "ClockLabel"><b>Employee ID</b></label>
                 <input type="text" name="employeeID" required class = "ClockInput">
           
