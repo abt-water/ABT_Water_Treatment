@@ -2,27 +2,39 @@
 class timeClockForm{
 	public function displayTimeClock(){
 		?>
-		<form action = 'ClockEmployee.php' method="POST">
+		<form class="form-control" action = 'ClockEmployee.php' method="POST">
             <div class="Clock">
+            
                 <h2>Clock In / Out</h2>
                 <br>
-                <label for="employeeID"><b>Employee ID</b></label>
-                <input type="text" name="employeeID" required>
-                <br/>
 
+                <div class="col-md-9 text-center" class="form-group row">
+                <label for="employeeID"><b>Employee ID</b></label>
+                <input class="form-control text-center" type="text" name="employeeID" required>
+                <br>
+                </div>
+
+                <div class="col-md-9 text-center" class="form-group row">
                 <label for="password"><b>Password</b></label>
-                <input type="text" name="password" required>
-                <br/>
-				<div>
+                <input class="form-control text-center " type="text" name="password" required>
+                <br>
+                </div>
+
+				<div class="col-md-9 text-center" class="form-group row">
 					<input type = "radio" name = "clockType" value= "in" id="clockInRadio" required>
-					<label for="clockInRadio" >Clock In</label>
+					<label class="control-label" for="clockInRadio" >Clock In</label>
 					
 					<input type = "radio" name = "clockType" value= "out" id="clockOutRadio" required>
-					<label for="clockOutRadio" >Clock In</label>
+                    <label class="control-label" for="clockOutRadio" >Clock In</label>
+                    <br><br>
+                </div>
+
+                <div class="col-md-9 text-center" class="form-group row">
+                    <button for="submit">Submit</button>
 				</div>
 				
 
-                <button for="submit">Submit</button>
+                
             </div>
         </form>
 		
