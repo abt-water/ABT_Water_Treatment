@@ -21,6 +21,7 @@ if (isset($_GET["add"])) {
     $User = $_POST['username'];
     $Pass = $_POST['bpassword'];
     $confirmPassword = $_POST['confirmPassword'];
+    $Pass = password_hash($Pass, PASSWORD_ARGON2_DEFAULT_TIME_COST);
 
     $sql = "INSERT INTO User (firstName,employeeID,username,bpassword,confirmPassword) 
             VALUES ('$firstName',  '$ID',  '$User', '$Pass', '$confirmPassword' )";
