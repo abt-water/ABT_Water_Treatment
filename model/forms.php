@@ -149,7 +149,7 @@ class signUpForm
     {
     ?>
     
-    <!-- Container (Form Section) -->
+    <!-- Container (Form Section Meters) -->
     <div id="form" class="container-fluid text-center bg-grey">
             
 
