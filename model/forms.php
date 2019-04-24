@@ -115,19 +115,19 @@ class signUpForm
             <br>
             <div class="contactUsBody">
                 <label for="firstName"><b>First Name:</b></label><br>
-                <input type="text" name="firstName" required>
+                <input type="text" name="firstName" placeholder="First Name">
                 <br/>
 
                 <label for="lastName"><b>Last Name:</b></label><br>
-                <input type="text" name="lastName" required>
+                <input type="text" name="lastName" placeholder="Last Name" required>
                 <br/>
 
                 <label for="email"><b>Email:</b></label><br>
-                <input type="email" name="email" required>
+                <input type="email" name="email" placeholder="Email" required>
                 <br/>
 
                 <label for="comment"><b>Comment:</b></label><br>
-                <input type="textarea" name="text" required>
+                <input type="textarea" name="text" placeholder="Comment" required>
                 <br/>
 
                 <button name="contactSubmit" id="contactSubmit" for="contactSubmit">Submit</button>
