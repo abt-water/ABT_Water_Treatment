@@ -2,6 +2,7 @@
 include('open_db.php');
 function contactUs() {
     include('forms.php');
+    global $db;
 
     /*Creates a new contact us form*/
     $form = new contactUsForm();
@@ -19,7 +20,7 @@ function contactUs() {
         $sql = "INSERT INTO Contact_Us (First_Name, Last_Name, Email, Comment) 
                 VALUES ('$First_Name', '$Last_Name', '$Email', '$Comment' )";
 
-        $result = $db->exec($sql);
+        $result = $db->query($sql);
 
         if (!$result) {
             echo $db->lastErrorMsg();
