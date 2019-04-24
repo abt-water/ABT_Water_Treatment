@@ -2,7 +2,7 @@
 class timeClockForm{
 	public function displayTimeClock(){
 		?>
-		<form action = 'ClockEmployee.php' method="POST" ID = "clockForm">
+		<form action = 'dashboardTimeClock.php' method="POST" ID = "clockForm">
             <div class="Clock container">
                 <h2>Clock In / Out</h2>
                 <label for="employeeID" class = "ClockLabel"><b>Employee ID</b></label>
@@ -27,21 +27,30 @@ class timeClockForm{
 					<input type = "radio" name = "clockType" value= "out" id="clockOutRadio" required>
 					<label for="clockOutRadio" >Clock In</label>
 				</div>
-                <button for="submit" class = "btn primary ClockBtn">Submit</button>
+                <button for="submit" name = "submit" id = "submit" type = "submit" class = "btn primary ClockBtn">Submit</button>
             </div>
         </form>
 		
 		
 		<?php		
 	}
-	public function clocktime(){
-		
+	
+	if (isset($_POST["submit"])){
+		if($_SERVER['REQUEST_METHOD']=="POST"){
+			$employeeID =$_POST['employeeID'];
+			$password = $_POST['password'];
+			$clockIn = $_POST['clocktype'];
+			
+			$sqlTxt = "using User;
+			Insert into TimeClock VALUES";
+			
+			
+		}		
 	}
 	
 	
 	
+	
 }
-
-
 
 ?>
