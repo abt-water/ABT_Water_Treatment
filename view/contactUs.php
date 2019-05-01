@@ -1,14 +1,20 @@
+<?php include('../Controller/contactUsLookupController.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Contact Us</title>
-
-<head>
-    <title>Dashboard Main</title>
-<?php include("../CSS/includeBack2.php");?>
+    <title>Contact Us</title>
+	<?php include("../CSS/includeBack2.php");?>
+    <script language="javascript">
+        function submitForm(){
+            var val = document.myform.nameList.value;
+            if(val!=-1){
+                document.myform.submit();
+            }
+        }
+    </script>
 
     <style>
-        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) Push things up*/
         
         .row.content {
             height: 800px;
@@ -18,7 +24,7 @@
         .sidenav {
             background-color: #3399ff;
             color: #fff;
-            height: 1275px;
+            height: 100%;
         }
         
         .sidenav li a {
@@ -51,39 +57,18 @@
             color: #fff;
         }
         
-        .dayReport {
-            height: 300px;
+        h1 {
+            text-align: center;
+            font-style: italic;
         }
         
-        .email {
-            height: 300px;
-        }
-        
-        .quote {
-            height: 300px;
-        }
-        
-        * {
-            box-sizing: border-box;
-        }
-        
-        ul {
-            list-style-type: none;
-        }
-        
-        h1, .center {
+        .quoteList {
             text-align: center;
         }
-
-        .contactUsBody {
-            text-align: center;
-        }
-
-    </style>
+    </style>  
 </head>
 
 <body>
-
     <nav class="navbar navbar-inverse visible-xs">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -92,7 +77,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="www.abtwater.com">ABT</a>
+                <a class="navbar-brand" href="www.abtwater.com">ABT</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
@@ -117,17 +102,74 @@
                 </ul><br>
             </div>
             <br>
-
-            <!--Start Code Here-->
-            <div class="col-sm-3"></div>
-            <div class="col-sm-4">
-                    <?php
-                        include('../controller/contactUsController.php');
-                        echo $contactUs;
-                    ?>
-            </div>
-            <div class="col-sm-2"></div>
-                
-        </div>
-    </body>
+        
+            <div class="col-sm-9">
+                <div class="top">
+                    <div class="topText">
+                        <h4>Trent Kjell</h4>
+                        <?php
+                            global $db;
+                            $count = $db->querySingle("SELECT COUNT(*) as count FROM Contacts");
+                            echo "<p> $count contact requests </p>";
+                        ?>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div>
+                            <h1><u>
+                                Contact Us List
+                            </u></h1>
+                        </div>
+                           <!--Start Form For Dropdown Section-->
+                     <form name="myform" action="" method="POST" enctype="multipart/form-data">
+                        
+                        <div class="col-lg-12">
+                            <div class="contactUsList">
+                                <select value= "nameList1" id="dropdown" name="nameList" class="form-control"  >  
+                                <option>Select Contact</option> 
+                                 <?php 
+                                     foreach($rows as $row)
+                                 {
+                                   $var1 = $row['First_Name'];  
+                                   $var2 = $row['Last_Name'];
+                                   $var3 = $row['ID'];
+                                  
+                                   echo "<option id=nameList1 value=$var3 name=nameList1 > $var1 $var2 </option>";
+                                   echo "<br>"; 
+                                 }
+                                 ?>                    
+                                 </select><br><br><br>
+                                 
+                                <!--Get Info Button-->
+                                     <input class="buttonSu" id="contactSubmit" name="contactSubmit" type="submit"  value="Get Info">
+                             </div>
+                        </div>
+                    </div>  
+                    <div class="col-sm-4">
+                        <div>
+                            <h1><u>
+                                Contact Us Info
+                            </u></h1>
+                        </div>
+                            <!--Start Form Section For Contact Us Info-->
+                    <div class="col-lg-12">
+                        <div class="contactUs">            
+                            <label for="fname">ID:</label>
+                            <input  type="text" class="form-control" id="IDname" name="ID1" placeholder="ID"value="<?php if (isset($_POST['contactSubmit'])) {  echo $ID1;} ?>">
+                            <label for="fname">First Name</label>
+                            <input  type="text" class="form-control" id="fname" name="First_Name" placeholder="First Name"value="<?php if (isset($_POST['contactSubmit'])) { echo $First_Name;} ?>">
+                            <label for="lname">Last Name</label>
+                            <input  type="text" class="form-control" id="lname" name="Last_Name" placeholder="Last Name"value="<?php if (isset($_POST['contactSubmit'])) { echo $Last_Name;} ?>">
+                            <label for="email">Email</label>
+                            <input  type="text" class="form-control" id="email" name="Email" placeholder="Email"value="<?php if (isset($_POST['contactSubmit'])) { echo $Email;} ?>">
+                            <label for="comment">Comment</label>
+                            <textarea  type="text" class="form-control" id="comment" name="Comment" placeholder="Comment"value="<?php if (isset($_POST['contactSubmit'])) { echo $Comment;} ?>"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+         </div>
+     </div>
+</body>
 </html>
