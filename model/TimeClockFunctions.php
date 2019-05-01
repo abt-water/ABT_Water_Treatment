@@ -1,8 +1,11 @@
 <?php
+include("openUser_db.php");
+
 class timeClockForm{
 	public function displayTimeClock(){
+		global $dbU;
 		?>
-		<form class="form-control " action = 'ClockEmployee.php' method="POST">
+		<form class="form-control " action = 'dashboardTimeClock.php' method="POST">
             
         
         <div class="Clock">
@@ -32,12 +35,12 @@ class timeClockForm{
 					<label class="control-label" for="clockInRadio" >Clock In</label>
 					
 					<input type = "radio" name = "clockType" value= "out" id="clockOutRadio" required>
-                    <label class="control-label" for="clockOutRadio" >Clock In</label>
+                    <label class="control-label" for="clockOutRadio" >Clock Out</label>
                     <br><br>
                 
                 
                 
-                    <button for="submit">Submit</button>
+                    <button for="submit" name = "clockSubmit">Submit</button>
 				
 				
 
@@ -48,6 +51,33 @@ class timeClockForm{
 		
 		
 		<?php		
+		if(isset($_POST["clockSubmit"])){
+			
+			$employee = $_POST["employeeID"];
+			$time = time();
+			$clockType = $_POST["clockType"];
+			
+			if ($clockType == "in"){
+				$clockType = true;
+			}else{
+				$clockType = false;
+			}
+			
+			$sql = "INSERT INTO TimeClock (EmployeeID, Time, ClockIn)
+					VALUES ('$employee', '$time', '$clockType')";
+			
+			$result = $dbU->query($sql);
+			if (!$result) {
+				echo $dbU->lastErrorMsg();
+			} else {
+				//header('Location: dashboardTimeClock.php');
+			}
+
+			$dbU->close();
+			
+			
+		}
+	
 	}
 	
 }
