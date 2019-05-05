@@ -18,7 +18,7 @@
       Respond       TEXT
    );
 
-    CREATE TABLE Contact_Us
+    CREATE TABLE ContactUs
     (
       ID INTEGER PRIMARY KEY AUTOINCREMENT,
       First_Name TEXT,
@@ -41,12 +41,7 @@
     Total_Price        CHAR(50),
     Estimated_Days       CHAR(50));
 
-    CREATE TABLE Meters
-    (
     
-    Meter1       CHAR(50),
-    Transmitter1            CHAR(50)
-    );
 
 EOF;
 
