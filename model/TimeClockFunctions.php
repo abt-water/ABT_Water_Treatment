@@ -1,6 +1,9 @@
 <?php
+include("openUser_db.php");
+
 class timeClockForm{
 	public function displayTimeClock(){
+		global $dbU;
 		?>
 		<div class="col-sm-4 text-center">
             
@@ -39,6 +42,33 @@ class timeClockForm{
 		
 		
 		<?php		
+		if(isset($_POST["clockSubmit"])){
+			
+			$employee = $_POST["employeeID"];
+			$time = time();
+			$clockType = $_POST["clockType"];
+			
+			if ($clockType == "in"){
+				$clockType = true;
+			}else{
+				$clockType = false;
+			}
+			
+			$sql = "INSERT INTO TimeClock (EmployeeID, Time, ClockIn)
+					VALUES ('$employee', '$time', '$clockType')";
+			
+			$result = $dbU->query($sql);
+			if (!$result) {
+				echo $dbU->lastErrorMsg();
+			} else {
+				//header('Location: dashboardTimeClock.php');
+			}
+
+			$dbU->close();
+			
+			
+		}
+	
 	}
 	
 }
