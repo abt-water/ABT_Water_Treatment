@@ -14,14 +14,14 @@ include("../model/TimeClockFunctions.php");
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) Push things up*/
         
         .row.content {
-            height: 800px;
+            /*height: auto;*/
         }
         /* Set gray background color and 100% height */
         
         .sidenav {
             background-color: #3399ff;
             color: #fff;
-            height: 100%;
+            height: 200%;
         }
         
         .sidenav li a {
@@ -61,6 +61,19 @@ include("../model/TimeClockFunctions.php");
         
         .quoteList {
             text-align: center;
+        }
+        #timeDate{
+            background-color: #3399ff;
+        }
+        body{
+            background-color: #3399ff;
+        }
+        #timeClock{
+            border: 3px solid black;
+            
+            border-style: outset;
+            background-color: #ffffff;
+            padding: 50px 50px 50px 50px;
         }
     </style>
     
@@ -106,13 +119,17 @@ include("../model/TimeClockFunctions.php");
  <!--Start Code Here-->
  
 <!--Clock-->
-    <div class="col-sm-4 text-center">
+<div id="timeDate" class="col-sm-8 text-center">
 
 <!--Put Clock Here-->
 
+<br><br><br>
+<iframe src="http://free.timeanddate.com/clock/i6qytavu/n4927/fn15/fs48/ftbi/bas3/bat8/pa14/tt0/tw0/tm1/ts1/tb4" frameborder="0" width="302" height="144"></iframe>
+
+<br><br><br>
 
 
-    </div>
+    </div>    
 
 <!--Timeclock form and function-->
     <?php
@@ -121,8 +138,8 @@ include("../model/TimeClockFunctions.php");
 				$form ->displayTimeClock();
             
     ?>
-            
-           
+          
+                 
 
 </div>
 </div>            
