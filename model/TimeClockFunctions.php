@@ -9,7 +9,8 @@ class timeClockForm{
 		<br><br><br>
 		<div id="timeClock" class="col-sm-8 text-center">
             
-            <form  action = 'ClockEmployee.php' method="POST" enctype="multipart/form-data">
+            <form  action = 'dashboardTimeClock.php' method="POST" enctype="multipart/form-data">
+
                 
         
                         <h1>Clock In / Out</h1>
@@ -34,7 +35,7 @@ class timeClockForm{
                         <label class="control-label" for="clockOutRadio" >Clock Out</label>
                                 <br><br><br><br>
             
-                            <button for="submit">Submit</button>
+                            <button for="clockSubmit" name ="clockSubmit">Submit</button>
             
             
                     
@@ -49,10 +50,12 @@ class timeClockForm{
 		
 		<?php		
 		if(isset($_POST["clockSubmit"])){
+			global $dbU;
 			
 			$employee = $_POST["employeeID"];
 			$time = time();
 			$clockType = $_POST["clockType"];
+			$jobType = $_POST["jobType"];
 			
 			if ($clockType == "in"){
 				$clockType = true;
@@ -60,14 +63,14 @@ class timeClockForm{
 				$clockType = false;
 			}
 			
-			$sql = "INSERT INTO TimeClock (EmployeeID, Time, ClockIn)
-					VALUES ('$employee', '$time', '$clockType')";
+			$sql = "INSERT INTO TimeClock (EmployeeID, Time, ClockIn, CostCode)
+					VALUES ('$employee', '$time', '$clockType', '$jobType')";
 			
 			$result = $dbU->query($sql);
 			if (!$result) {
 				echo $dbU->lastErrorMsg();
 			} else {
-				//header('Location: dashboardTimeClock.php');
+				echo "Clock $clockType successful!";
 			}
 
 			$dbU->close();
