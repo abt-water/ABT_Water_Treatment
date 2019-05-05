@@ -10,12 +10,12 @@ function contactUs() {
     /*Displays the contact us form*/
     $form ->displayContactUs('contactUs', 'contactUsPage.php', 'post');
 
-    if (isset($_POST["contactSubmit"])) {
+    if (isset($_POST["submit1"])) {
     
-        $First_Name = $_POST['First_Name'];
-        $Last_Name = $_POST['Last_Name'];
-        $Email = $_POST['Email'];
-        $Comment = $_POST['Comment'];
+        $First_Name = $_POST['firstName1'];
+        $Last_Name = $_POST['lastName1'];
+        $Email = $_POST['Email1'];
+        $Comment = $_POST['comment1'];
 
         $sql = "INSERT INTO Contact_Us (First_Name, Last_Name, Email, Comment) 
                 VALUES ('$First_Name', '$Last_Name', '$Email', '$Comment' )";

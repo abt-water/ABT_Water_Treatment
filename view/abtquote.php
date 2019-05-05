@@ -337,7 +337,7 @@ include('../model/forms.php');
             </div><br><br><br>
             
             <?php
-
+//include('../model/frontEndFunctions.php');
 /*Creates a new meter estimate form*/
 $estimateForm = new estimate();
 /*Displays the meter estimate form*/
@@ -372,17 +372,17 @@ $infoForm ->displayInfoSection();
                         </div>
                         <div class="col-sm-6 lName">
                             <label for="lname">First Name</label>
-                            <input required type="text" class="form-control" id="contactFirstName" name="firstName" placeholder="Your first name.."/>
+                            <input required type="text" class="form-control" id="contactFirstName" name="firstName1" placeholder="Your first name.."/>
                             <label for="lname">Last Name</label>
-                            <input required type="text" class="form-control" id="contactLastName" name="lastName" placeholder="Your last name.."/>
+                            <input required type="text" class="form-control" id="contactLastName" name="lastName1" placeholder="Your last name.."/>
                             <label for="lname">Email</label>
-                            <input type="text" class="form-control " id="contactEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="Email" placeholder="johndoe@example.com.." required>
+                            <input type="text" class="form-control " id="contactEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="Email1" placeholder="johndoe@example.com.." required>
                         </div>
                         <div class="col-sm-6">    
                             <label for="lname">Comments</label>
-                            <textarea class="form-control" rows="5"></textarea>
+                            <textarea name="comment1" class="form-control" rows="5"></textarea>
                         </div>
-                        <input class="buttonSu" id="submit" name="submit" type="submit" value="Submit">
+                        <input class="buttonSu" id="submit1" name="submit1" type="submit" value="Submit">
                     </div>
                 </div>
             </form>
@@ -393,7 +393,41 @@ $infoForm ->displayInfoSection();
         <?php 
         //function that submits quote to database
             include('../controller/frontEndController.php');
+            //include('../controller/contactUsController.php');
             echo $submitQuote;
+            //$contactUs = contactUs();
+            function contactUs() {
+                include('forms.php');
+                global $db;
+              
+                /*Creates a new contact us form*/
+                $form = new contactUsForm();
+              
+                /*Displays the contact us form*/
+                $form ->displayContactUs('contactUs', 'contactUsPage.php', 'post');
+              
+                if (isset($_POST["submit1"])) {
+                
+                    $First_Name = $_POST['firstName1'];
+                    $Last_Name = $_POST['lastName1'];
+                    $Email = $_POST['Email1'];
+                    $Comment = $_POST['comment1'];
+              
+                    $sql =
+                     "INSERT INTO ContactUs (First_Name, Last_Name, Email, Comment) 
+                            VALUES ('$First_Name', '$Last_Name', '$Email', '$Comment' )";
+              
+                   // $result1 = $db->query($sql1);
+              
+                    //if (!$result1) {
+                     //   echo $db->lastErrorMsg();
+                   // } else {
+                    //    header('Location: abtLogin.php');
+                    //}
+              
+                   // $db->close();
+                }
+              }
         ?>
 
             </div>
@@ -401,7 +435,7 @@ $infoForm ->displayInfoSection();
 
         <?php 
         //footer code
-             include('../model/frontFooter.php');
+          //   include('../model/frontFooter.php');
         ?> 
 
     <script >         
