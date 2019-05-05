@@ -116,7 +116,7 @@ include("../model/TimeClockFunctions.php");
 
 <!--Timeclock form and function-->
     <?php
-			//session_start(); gave error so commented out...seems ok without it I hope
+			//session_start(); gave error...seems ok without it I hope
 				$form = new timeClockForm();
 				$form ->displayTimeClock();
             
