@@ -5,49 +5,46 @@ class timeClockForm{
 	public function displayTimeClock(){
 		global $dbU;
 		?>
-		<form class="form-control " action = 'dashboardTimeClock.php' method="POST">
+		<br><br><br>
+		<br><br><br>
+		<div id="timeClock" class="col-sm-8 text-center">
             
+            <form  action = 'ClockEmployee.php' method="POST" enctype="multipart/form-data">
+                
         
-        <div class="Clock">
+                        <h1>Clock In / Out</h1>
+                                <br><br><br>
+                               
+                        <label for="employeeID">Employee ID</label>
+                        <input class="form-control text-center" type="text" name="employeeID" required>
+						<br><br>
+                                                         
+                        <label for="password">Password</label>
+                        <input class="form-control text-center " type="text" name="password" required>
+						<br><br>  
+
+						<label for="jobType">Job Type</label>
+                        <input class="form-control text-center " type="text" name="jobType" required>
+						<br><br>    
+                            
+                        <input type = "radio" name = "clockType" value= "in" id="clockInRadio" required>
+                        <label class="control-label" for="clockInRadio" >Clock In</label>
+                
+                        <input type = "radio" name = "clockType" value= "out" id="clockOutRadio" required>
+                        <label class="control-label" for="clockOutRadio" >Clock Out</label>
+                                <br><br><br><br>
             
-                <h2>Clock In / Out</h2>
-                <br>
+                            <button for="submit">Submit</button>
+            
+            
+                    
+            </form>
+        
+
+            
     
-                <div class="col-lg-12">
-               
-                <label for="employeeID"><b>Employee ID</b></label>
-                <input class="form-control text-center" type="text" name="employeeID" required>
-                <br>
-                
-                
-
-                
-                
-                <label for="password"><b>Password</b></label>
-                <input class="form-control text-center " type="text" name="password" required>
-                <br>
-                
-                
-
-                
-				
-					<input type = "radio" name = "clockType" value= "in" id="clockInRadio" required>
-					<label class="control-label" for="clockInRadio" >Clock In</label>
-					
-					<input type = "radio" name = "clockType" value= "out" id="clockOutRadio" required>
-                    <label class="control-label" for="clockOutRadio" >Clock Out</label>
-                    <br><br>
-                
-                
-                
-                    <button for="submit" name = "clockSubmit">Submit</button>
-				
-				
-
-                    </div>
-            </div>
-            
-        </form>
+</div>
+</div>
 		
 		
 		<?php		
