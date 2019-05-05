@@ -108,6 +108,9 @@ include("../model/TimeClockFunctions.php");
 <!--Clock-->
     <div class="col-sm-4 text-center">
 
+<!--Put Clock Here-->
+
+
 
     </div>
 
