@@ -1,9 +1,10 @@
 <?php
-include('open_db.php');
+//include('open_db.php');
 //include('../view/abtquote.php');
 
 
 function get_contact_info() {
+  //include('frontEndForms.php');
   global $db;
 
   $contactQuery = "SELECT First_Name, Last_Name, ID FROM Contact_Us ORDER BY ID";
@@ -51,6 +52,7 @@ if (isset($_POST['contactSubmit'])) {
 
 
 function submitQuote() {
+ // include('frontEndForms.php');
     global $db;
     
 
@@ -103,3 +105,44 @@ EOF;
 }
 
 ?>
+<?php
+
+
+//function that submits quote to database
+   // include('../controller/frontEndController.php');
+    //include('../controller/contactUsController.php');
+   // echo $submitQuote;
+    //$contactUs = contactUs();
+    function contactUs() {
+        //include('frontEndForms.php');
+        global $db;
+      
+        /*Creates a new contact us form*/
+       // $form = new contactUsForm();
+      
+        /*Displays the contact us form*/
+       // $form ->displayContactUs();
+      
+        if (isset($_POST["submit1"])) {
+        
+            $First_Name = $_POST['firstName1'];
+            $Last_Name = $_POST['lastName1'];
+            $Email = $_POST['Email1'];
+            $Comment = $_POST['comment1'];
+      
+            $sql =
+             "INSERT INTO ContactUs (First_Name, Last_Name, Email, Comment) 
+                    VALUES ('$First_Name', '$Last_Name', '$Email', '$Comment' )";
+      
+           // $result1 = $db->query($sql1);
+      
+            //if (!$result1) {
+             //   echo $db->lastErrorMsg();
+           // } else {
+            //    header('Location: abtLogin.php');
+            //}
+      
+           // $db->close();
+        }
+      }
+      ?>
