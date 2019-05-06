@@ -1,4 +1,6 @@
 <?php 
+
+
 include("../model/TimeClockFunctions.php");
 ?>
 
@@ -133,7 +135,7 @@ include("../model/TimeClockFunctions.php");
 
 <!--Timeclock form and function-->
     <?php
-			//session_start(); gave error...seems ok without it I hope
+			//session_start(); 
 				$form = new timeClockForm();
 				$form ->displayTimeClock();
             

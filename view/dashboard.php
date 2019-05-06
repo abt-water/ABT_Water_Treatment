@@ -88,7 +88,7 @@
                     <li><a href="dashboard.php">Dashboard</a></li>
                     <li><a href="dashboard_quote.php">Quote List</a></li>
                     <li><a href="contactUs.php">Contact Us</a></li>
-                    <li><a href="timeClock.php">Timeclock</a></li>
+                    <li><a href="dashboardTimeClock.php">Timeclock</a></li>
                 </ul>
             </div>
         </div>
@@ -102,7 +102,7 @@
                     <li><a href="dashboard.php">Dashboard</a></li>
                     <li><a href="dashboard_quote.php">Quotes List</a></li>
                     <li><a href="contactUs.php">Contact Us</a></li>
-                    <li><a href="timeClock.php">Timeclock</a></li>
+                    <li><a href="dashboardTimeClock.php">Timeclock</a></li>
 
 
 
