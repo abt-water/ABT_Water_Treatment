@@ -65,6 +65,26 @@
         .quoteList {
             text-align: center;
         }
+       
+        input{
+            border:hide;
+        }
+        body{
+            background-color: #3399ff;
+        }
+        #contactForm1, #contactForm2{
+            border: 3px solid black;
+            margin-right: 20px;
+            margin-left:20px;
+            margin-bottom:20px;
+            border-style: outset;
+            background-color: #ffffff;
+            padding: 10px 10px 10px 10px;
+        }
+        #contactForm1{
+            text-align:center;
+        }
+        
     </style>  
 </head>
 
@@ -84,7 +104,7 @@
                     <li><a href="dashboard.php">Dashboard</a></li>
                     <li><a href="dashboard_quote.php">Quote List</a></li>
                     <li><a href="contactUs.php">Contact Us</a></li>
-                    <li><a href="timeClock.php">Timeclock</a></li>
+                    <li><a href="dashboardTimeClock.php">Timeclock</a></li>
                 </ul>
             </div>
         </div>
@@ -98,24 +118,15 @@
                     <li><a href="dashboard.php">Dashboard</a></li>
                     <li><a href="dashboard_quote.php">Quotes List</a></li>
                     <li><a href="contactUs.php">Contact Us</a></li>
-                    <li><a href="timeClock.php">Timeclock</a></li>
+                    <li><a href="dashboardTimeClock.php">Timeclock</a></li>
                 </ul><br>
             </div>
             <br>
         
             <div class="col-sm-9">
-                <div class="top">
-                    <div class="topText">
-                        <h4>Trent Kjell</h4>
-                        <?php
-                            global $db;
-                            $count = $db->querySingle("SELECT COUNT(*) as count FROM Contacts");
-                            echo "<p> $count contact requests </p>";
-                        ?>
-                    </div>
-                </div>
+                
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div id="contactForm1" class="col-sm-8">
                         <div>
                             <h1><u>
                                 Contact Us List
@@ -146,7 +157,7 @@
                              </div>
                         </div>
                     </div>  
-                    <div class="col-sm-4">
+                    <div id="contactForm2" class="col-sm-8">
                         <div>
                             <h1><u>
                                 Contact Us Info
@@ -155,8 +166,7 @@
                             <!--Start Form Section For Contact Us Info-->
                     <div class="col-lg-12">
                         <div class="contactUs">            
-                            <label for="fname">ID:</label>
-                            <input  type="text" class="form-control" id="IDname" name="ID1" placeholder="ID"value="<?php if (isset($_POST['contactSubmit'])) {  echo $ID1;} ?>">
+                            
                             <label for="fname">First Name</label>
                             <input  type="text" class="form-control" id="fname" name="First_Name" placeholder="First Name"value="<?php if (isset($_POST['contactSubmit'])) { echo $First_Name;} ?>">
                             <label for="lname">Last Name</label>
@@ -164,7 +174,7 @@
                             <label for="email">Email</label>
                             <input  type="text" class="form-control" id="email" name="Email" placeholder="Email"value="<?php if (isset($_POST['contactSubmit'])) { echo $Email;} ?>">
                             <label for="comment">Comment</label>
-                            <textarea  type="text" class="form-control" id="comment" name="Comment" placeholder="Comment"value="<?php if (isset($_POST['contactSubmit'])) { echo $Comment;} ?>"></textarea>
+                            <textarea  type="text" class="form-control" id="comment" rows="10" name="Comment" placeholder="Comments"><?php if (isset($_POST['contactSubmit'])) { echo $Comment;} ?></textarea>
                         </div>
                     </div>
                 </div>

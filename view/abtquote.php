@@ -37,6 +37,7 @@
                                 <li><a href="#step1">YOUR INFO</a></li>
                             </ul>
                         </li>
+                        <li><a href="#contact">CONTACT US</a></li>
 
                        
                     </ul>
@@ -661,22 +662,27 @@
         google ABT Water in Beloit for info on this section need to get this section into form page -->
         <div id="contact" class="container-fluid bg-grey">
         <form name="myForm" action="" method="POST" enctype="multipart/form-data">
-                <h2>Contact Us</h2>
+                <h1><u>Contact Us</u></h1>
                 <div class="row">
                     <div class="col-sm-4">
+                        <br><br>
                         <iframe class="wrap-box-element" width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=42.549844,-89.021571&amp;ll=42.549844,-89.021571&amp;z=16&amp;output=embed"></iframe>
                 
-                            <p>ABT Water<br>
-                            2836 S. Bartells Dr<br>
-                            Beloit, WI 53511<br>
-                            (608) 313-8791</p>
+                           
                     </div>
 
-                    <div class="col-sm-3"></div>
+                    <div id="contactUsText" class="col-sm-3">
+                        <br><br><br><br><br>
+                    <p id="contactUsText"><strong>ABT Water<br>
+                            2836 S. Bartells Dr<br>
+                            Beloit, WI 53511<br>
+                            (608) 313-8791</strong></p>
+
+                    </div>
 
                     <div class = "col-sm-5">
                         <div class="row">
-                            <h4>Give us a call or use the contact form below and your message will be delivered to the appropriate department.</h4>
+                            <h2>Give us a call or use the contact form below and your message will be delivered to the appropriate department.</h2>
                         </div>
                         <div class="col-sm-6 lName">
                             <label for="lname">First Name</label>
@@ -688,7 +694,7 @@
                         </div>
                         <div class="col-sm-6">    
                             <label for="lname">Comments</label>
-                            <textarea id="comment1" name="comment1" class="form-control" rows="5"></textarea>
+                            <textarea rows="10" id="comment1" name="comment1" class="form-control" rows="5"></textarea>
                         </div>
                         <input class="buttonSu" id="submit1" name="submit1" type="submit" value="Submit">
                     </div>
@@ -731,7 +737,16 @@
 
             </div>
         </div>
+        <footer class="container-fluid text-center">
+                <a href="#myPage" title="To Top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                </a>
 
+                <a href="#myPage">
+                    <p>Top Of Page</p>
+                </a>
+
+            </footer>
         <?php 
         //footer code
           //   include('../model/frontFooter.php');

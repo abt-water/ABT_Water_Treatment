@@ -586,6 +586,11 @@ table {
 th:first-child {
     vertical-align: bottom;
 }
-p.bold{
-	font-weight: 400;
+
+p.bold {
+    font-weight: 400;
+}
+
+#contactUsText {
+    font-size: 125%;
 }

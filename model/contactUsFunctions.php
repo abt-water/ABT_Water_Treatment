@@ -17,7 +17,7 @@ function contactUs() {
         $Email = $_POST['Email'];
         $Comment = $_POST['Comment'];
 
-        $sql = "INSERT INTO Contact_Us (First_Name, Last_Name, Email, Comment) 
+        $sql = "INSERT INTO ContactUs (First_Name, Last_Name, Email, Comment) 
                 VALUES ('$First_Name', '$Last_Name', '$Email', '$Comment' )";
 
         $result = $db->query($sql);
@@ -35,7 +35,7 @@ function contactUs() {
 function get_contact_info() {
     global $db;
 
-    $contactQuery = "SELECT First_Name, Last_Name, ID FROM Contact_Us ORDER BY ID";
+    $contactQuery = "SELECT First_Name, Last_Name, ID FROM ContactUs ORDER BY ID";
     $contactResult = $db->query($contactQuery);
     
     if ($contactResult == false) {
@@ -61,7 +61,7 @@ if (isset($_POST['contactSubmit'])) {
 
     $ID7= $_POST['nameList'];
 
-    $sql2 = "SELECT * FROM Contact_Us WHERE ID=". $ID7 ;
+    $sql2 = "SELECT * FROM ContactUs WHERE ID=". $ID7 ;
 
     $result1 = $db->query($sql2);
 

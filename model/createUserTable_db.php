@@ -16,7 +16,19 @@
       
    );
        
-
+   CREATE TABLE TimeClock
+   (
+   ID INTEGER PRIMARY KEY AUTOINCREMENT,
+   EmployeeID           INT,
+   
+   Time       TEXT,
+   
+   
+   ClockIn        CHAR(50),
+   Job        CHAR(50)
+   
+);
+    
 
       
 

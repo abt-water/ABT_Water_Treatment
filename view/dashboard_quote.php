@@ -61,7 +61,7 @@ function submitForm(){
             background-color: #3399ff;
             height: 50px;
             text-align: center;
-            color: #fff;
+            
         }
         
         h1 {
@@ -71,6 +71,20 @@ function submitForm(){
         
         .quoteList {
             text-align: center;
+        }
+        body{
+            background-color: #3399ff;
+        }
+        #quoteForm, #quoteForm1, #quoteForm2{
+            border: 3px solid black;
+            margin-right: 20px;
+            border-style: outset;
+            background-color: #ffffff;
+            padding: 10px 10px 10px 10px;
+        }
+        #quoteForm{
+            margin-left:10px;
+            margin-bottom:20px;
         }
     </style>
     
@@ -93,7 +107,7 @@ function submitForm(){
                     <li><a href="dashboard.php">Dashboard</a></li>
                     <li><a href="dashboard_quote.php">Quote List</a></li>
                     <li><a href="contactUs.php">Contact Us</a></li>
-                    <li><a href="timeClock.php">Timeclock</a></li>
+                    <li><a href="dashboardTimeClock.php">Timeclock</a></li>
                 </ul>
             </div>
         </div>
@@ -107,41 +121,31 @@ function submitForm(){
                     <li><a href="dashboard.php">Dashboard</a></li>
                     <li><a href="dashboard_quote.php">Quotes List</a></li>
                     <li><a href="contactUs.php">Contact Us</a></li>
-                    <li><a href="timeClock.php">Timeclock</a></li>
+                    <li><a href="dashboardTimeClock.php">Timeclock</a></li>
                 </ul><br>
             </div>
             <br>
 
         
-            <div class="col-sm-9">
-                <div class="top">
-                    <div class="topText">
-                        <h4>Trent Kjell</h4>
-                        <?php
-           
-                        
-
-                        //function get_num_rows() {
-                            global $db;
-                        $count = $db->querySingle("SELECT COUNT(*) as count FROM Contacts");
-                        echo "<p> $count quotes </p>";
-   
-    
-                            //}
-
-            ?>
-                    </div>
-                </div>
+                
         
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div>
-                            <h1><u>
-                                Quote List
-                            </u></h1>
-                        </div>
+                <div  class="row">
+                    <div id="quoteForm" class="col-sm-8">
+                    <div class="numberOfQuotes">
+                       
+                       <?php
+          
+                       //function get_num_rows() {
+                           global $db;
+                       $count = $db->querySingle("SELECT COUNT(*) as count FROM Contacts");
+                       echo "<h1><u> $count Quotes</u></h1>";
+  
+                       ?>
+                  
+                       </div>
+                        
                            <!--Start Form For Dropdown Section-->
-         <form name="myform" action="" method="POST" enctype="multipart/form-data">
+         <form id="myform" name="myform" action="" method="POST" enctype="multipart/form-data">
                         
                         <div class="col-lg-12">
                             <div class="quoteList">
@@ -167,12 +171,13 @@ function submitForm(){
                                      
                             
                              </div>
+
                         </div>
+                        
+
                     </div>
-                    
-                   
-                    
-                    <div class="col-sm-4">
+                                
+                    <div id="quoteForm1" class="col-sm-4">
                         <div>
                             <h1><u>
                                 Contact Info
@@ -184,8 +189,7 @@ function submitForm(){
                                  
                             <label for="fname">Contact</label>
                             <input  type="text" class="form-control" id="Respond" name="Respond" placeholder="Respond" value="<?php if (isset($_POST['submit'])) {  echo $Respond;} ?>">    
-                            <label for="fname">ID:</label>
-                            <input  type="text" class="form-control" id="IDname" name="ID1" placeholder="ID"value="<?php if (isset($_POST['submit'])) {  echo $ID1;} ?>">
+                            
                             <label for="fname">First Name</label>
                             <input  type="text" class="form-control" id="fname" name="First_Name" placeholder="First Name"value="<?php if (isset($_POST['submit'])) { echo $First_Name;} ?>">
                             <label for="lname">Last Name</label>
@@ -208,7 +212,7 @@ function submitForm(){
                     </div>
                 </div>
                    
-                    <div class="col-sm-4">
+                    <div id="quoteForm2" class="col-sm-4">
                         <div>
                             <h1><u>
                                 Estimates

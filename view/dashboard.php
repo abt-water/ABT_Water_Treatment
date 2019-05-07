@@ -68,6 +68,7 @@
         ul {
             list-style-type: none;
         }
+        
     </style>
 </head>
 
@@ -114,21 +115,7 @@
             <div class="col-sm-9">
                 <div class="top">
                     <div class="topText">
-                    <h4> </h4>
-                        
-                        <?php
-           
-                        include('../model/open_db.php');
-
-                        //function get_num_rows() {
-                            global $db;
-                        $count = $db->querySingle("SELECT COUNT(*) as count FROM Contacts");
-                        echo "<p>You have $count quotes </p>";
-   
-    
-                            //}
-
-            ?>
+                   
                     </div>
                 </div>
 
@@ -152,7 +139,7 @@
                     <div class="col-sm-4">
                         <div>
                             <h1>
-                                <a class="navbar-brand" href="http://localhost/ABT_Water/ABT_Main/View/dashboard_quote.php">Quotes</a>
+                                <a class="navbar-brand" href="http://localhost/ABT_Water_Treatment/ABT_Main/view/dashboard_quote.php">Quotes</a>
                             </h1><br><br>
             
                         </div>
@@ -174,7 +161,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="quote">
-                            <object type="text/html" data="http://localhost/ABT_Water/view/dashboard_quote.php" width="100%" height="290px" style="overflow:auto;border:2px ridge #3399ff; border-radius: 10px 10px 10px 10px;">
+                            <object type="text/html" data="http://localhost/ABT_Water_Treatment/view/dashboard_quote.php" width="100%" height="290px" style="overflow:auto;border:2px ridge #3399ff; border-radius: 10px 10px 10px 10px;">
                             </object>
                         </div>
                     </div>

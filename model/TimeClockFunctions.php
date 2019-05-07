@@ -58,12 +58,12 @@ class timeClockForm{
 			$jobType = $_POST["jobType"];
 			
 			if ($clockType == "in"){
-				$clockType = true;
+				$clockType = "in";
 			}else{
-				$clockType = false;
+				$clockType = "out";
 			}
 			
-			$sql = "INSERT INTO TimeClock (EmployeeID, Time, ClockIn, CostCode)
+			$sql = "INSERT INTO TimeClock (EmployeeID, Time, ClockIn, Job)
 					VALUES ('$employee', '$time', '$clockType', '$jobType')";
 			
 			$result = $dbU->query($sql);
